@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Simple PWA</title>
+    <link rel="stylesheet" href="css/styles.css" />
+    <link rel="manifest" href="/manifest.json" />
+  </head>
+
+  <body>
+    <div class="info">
+      <h1>VM PWA</h1>
+    </div>
+    <header>
+      <h2>PWA, Service Workers</h2>
+      <br />
+      <nav>
+        <a class="nav_link" href="index.html">Service Workers Example</a>
+        <a class="nav_link active" href="notification.html"
+          >Notification Example</a
+        >
+      </nav>
+    </header>
+
+    <div class="container">
+      <section>
+        <h4 class="title">Notification permission</h4>
+        <p class="description">
+          Notification permission status:
+          <span class="status" id="notification__status"></span>
+        </p>
+        <button id="req_notification_perm">Ask to allow notifications</button>
+      </section>
+      <section>
+        <h4 class="title">Notification Status</h4>
+        <p class="description">
+          User subsription status is
+          <span class="status subscription_status"> </span>
+        </p>
+
+        <button onclick="checkSubscription()">Check Subscription status</button>
+      </section>
+      <section>
+        <h4 class="title">Subscribe user</h4>
+        <div class="subscribe_actions">
+          <button onclick="subscribeUser()">subscribe</button>
+          <button onclick="unsubscribeUser()">unsubscribe</button>
+        </div>
+      </section>
+      <section>
+        <h4 class="title">Self Notification</h4>
+        <label>Message:</label>
+        <input class="input notification__msg" type="text" />
+        <button id="send_notification">Send Self Notifications</button>
+      </section>
+      <section>
+        <h4 class="title">Send Notification to all users</h4>
+        <label>Message:</label>
+        <input class="input notification__msg__all" type="text" />
+        <button onclick="sendNotificationToAll()">
+          Send Self Notifications
+        </button>
+      </section>
+    </div>
+
+    <script src="js/notification.js"></script>
+  </body>
+</html>

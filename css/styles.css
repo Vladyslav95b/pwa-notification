@@ -1,0 +1,175 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-size: 14px;
+  font-family: sans-serif;
+}
+
+.info {
+  height: 30px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  background: #3a1a86;
+  color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 20px 3px 9px rgb(0 0 0 / 30%);
+}
+
+header {
+  height: 100px;
+  background: #5d30bf;
+  margin-top: 30px;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+header a {
+  color: white;
+  position: relative;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+header .active {
+  font-weight: 700;
+  color: #a8b9dc;
+}
+.nav_link:after {
+  content: '';
+  display: block;
+  position: absolute;
+  right: 0;
+  bottom: -3px;
+  width: 0;
+  height: 2px;
+  background-color: rgb(22, 3, 98);
+  transition: width 0.5s;
+}
+
+.nav_link:hover:after {
+  content: '';
+  width: 100%;
+  display: block;
+  position: absolute;
+  left: 0;
+  bottom: -3px;
+  height: 2px;
+  background-color: rgb(138, 165, 240);
+  transition: width 0.5s;
+}
+
+nav {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+}
+
+.container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+.card {
+  padding: 1rem;
+  border-radius: 5px;
+  border: 1px solid #eee;
+  box-shadow: 2px 2px 7px rgb(0 0 0 / 30%);
+  margin-bottom: 1rem;
+}
+
+.card-title {
+  font-size: 1.2rem;
+  text-transform: capitalize;
+}
+
+section {
+  padding: 10px 5px;
+  border-bottom: 1px solid silver;
+}
+.title {
+  text-align: center;
+  margin-bottom: 15px;
+}
+
+button {
+  --border: 2px; /* the border width */
+  --slant: 0.7em; /* control the slanted corners */
+  --color: #37e8fc; /* the color */
+
+  font-size: 15px;
+  padding: 0.4em 1.2em;
+  border: none;
+  cursor: pointer;
+  font-weight: bold;
+  color: var(--color);
+  background: linear-gradient(to bottom left, var(--color) 50%, #0000 50.1%) top
+      right,
+    linear-gradient(to top right, var(--color) 50%, #0000 50.1%) bottom left;
+  background-size: calc(var(--slant) + 1.3 * var(--border))
+    calc(var(--slant) + 1.3 * var(--border));
+  background-repeat: no-repeat;
+  box-shadow: 0 0 0 200px inset var(--s, #0000),
+    0 0 0 var(--border) inset var(--color);
+  clip-path: polygon(
+    0 0,
+    calc(100% - var(--slant)) 0,
+    100% var(--slant),
+    100% 100%,
+    var(--slant) 100%,
+    0 calc(100% - var(--slant))
+  );
+  transition: color var(--t, 0.3s), background-size 0.3s;
+}
+button:focus-visible {
+  outline-offset: calc(-1 * var(--border));
+  outline: var(--border) solid #000c;
+  clip-path: none;
+  background-size: 0 0;
+}
+button:hover,
+button:active {
+  background-size: 100% 100%;
+  color: #fff;
+  --t: 0.2s 0.1s;
+}
+button:active {
+  --s: #0005;
+  transition: none;
+}
+
+.description {
+  margin-bottom: 10px;
+  font-weight: 500;
+  color: #1a0845;
+}
+
+.status {
+  color: #5656e1;
+}
+
+.input {
+  outline: none;
+  border: none;
+  border-bottom: 1px solid black;
+  padding: 2px 4px;
+  margin-right: 20px;
+}
+
+.subscribe_actions {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+}
